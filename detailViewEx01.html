@@ -1,0 +1,104 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="./../common/common.jsp" %>    
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		.badge{
+			background-color: lightblue;
+		}
+		.label{
+			background-color: #EECCEE;
+		}
+	</style>
+	<script type="text/javascript">
+		function func1(){
+			alert('유효성 검사');
+			return false ;
+		};
+		
+		$(document).ready(function(){
+			  $('[data-toggle="popover"]').popover();
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h2 class="panel-title" align="left">
+					게시물 목록
+				</h2>
+			</div>
+			<div class="panel-body">
+				<div class="col-sm-12">
+					<div class="col-sm-4" align="center">
+						<table class="table table-bordered" border="0">
+							<tr>
+								<td>
+									<img align="middle" width="180" height="180" 
+										 alt="하하하" src="./../images/Lighthouse.jpg">
+								</td>	
+							</tr>
+						</table>
+					</div>
+					<div class="col-sm-8" align="center">
+						<table class="table table-hover table-striped" border=0>
+							<tr>
+								<td width="25%">글 번호</td>
+								<td width="75%">100</td>
+							</tr>
+							<tr>
+								<td width="25%">제목</td>
+								<td width="75%">호호호 <span class="badge">20</span></td>
+							</tr>
+							<tr>
+								<td width="25%">작성자</td>
+								<td width="75%">홍길동</td>
+							</tr>
+							<tr>
+								<td width="25%">글내용</td>
+								<td width="75%">잼있어요 <span class="label label-default">박수!</span></td>
+							</tr>
+							<tr>
+								<td width="25%">주문 수량</td>
+								<td width="75%">
+									<form class="form-horizontal" action="">
+									  <div class="form-group">
+									    <div class="col-sm-4">
+									      <input type="email" class="form-control" id="qty" 
+									      		 placeholder="주문 수량을 입력해주세요"
+									      		 data-toggle="popover" title="수량 입력란" 
+									      		 data-content="구매하시고자 하는 수량을 정수로 입력해주세요."
+									      		 data-placement="auto top"
+									      		 data-trigger="hover">
+									    </div>
+									    <div class="col-sm-3">
+									      <input type="button" class="btn btn-info form-control"
+									      		 value="주문" onclick="return func1();">
+									    </div>
+									  </div>
+									 </form> 
+								</td>
+							</tr>
+							<tr>
+								<td width="25%">주문 일자</td>
+								<td width="75%">2020/08/12</td>
+							</tr>
+						</table>
+					</div>
+				</div>	
+				<hr>
+				<div class="col-md-offset-5 col-md-4">
+					<button class="btn btn-primary" onclick="history.back();">
+						돌아가기
+					</button>
+				</div>		
+			</div>
+		</div>
+	</div>	
+</body>
+</html>
